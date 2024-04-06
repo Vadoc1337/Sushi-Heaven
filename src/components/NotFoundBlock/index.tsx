@@ -13,7 +13,7 @@ export const NotFoundBlock = () => {
       <p className={styles.description}>
         Ничего не найдено
       </p>
-      <Link to="/" className="button button--black">
+      <Link to="/Sushi-Heaven/" className="button button--black">
         <span>На главную</span>{" "}
       </Link>
     </div>

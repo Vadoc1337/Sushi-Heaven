@@ -63,8 +63,8 @@ export const Sort: React.FC<ISortProps> = (({ value }) => {
               <b>Сортировка по:</b>
               <span onClick={() => setOpen(!open)}>{value.name}</span>
             </div>
-            {location.pathname !== "/cart" && (
-              <Link to="/cart" className="button button--cart">
+            {location.pathname !== "Sushi-Heaven/cart" && (
+              <Link to="Sushi-Heaven/cart" className="button button--cart">
                 <svg
                   width="16"
                   height="16"

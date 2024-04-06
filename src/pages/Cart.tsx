@@ -122,7 +122,7 @@ const Cart = () => {
           </div>
           <div className="cart__bottom-buttons">
             <Link
-              to="/"
+              to="/Sushi-Heaven/"
               className="button button--outline button--add go-back-btn"
             >
               {windowWidth <= 585 ? (
