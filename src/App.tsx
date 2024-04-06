@@ -12,7 +12,7 @@ const NotFound = React.lazy(() => import(/* webpackChunkName: "NotFound" */ "./p
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<MainLayout />}>
+      <Route path="/Sushi-Heaven" element={<MainLayout />}>
         <Route path="" element={<Home />} />
         <Route
           path="cart"
