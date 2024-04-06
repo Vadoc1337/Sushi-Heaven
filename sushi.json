@@ -1,0 +1,402 @@
+[
+  {
+    "id": "0",
+    "imageUrl": "img/rolls/philadelphia.jpg",
+    "title": "Филадельфия",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, сыр сливочный, огурец, лосось",
+    "weight": 270,
+    "price": 649,
+    "category": 1,
+    "rating": 1,
+    "nutritionFacts": {
+      "calories": 204.1,
+      "protein": 9.4,
+      "fat": 10.1,
+      "carbohydrate": 19
+    }
+  },
+  {
+    "id": "1",
+    "imageUrl": "img/rolls/dragon.jpg",
+    "title": "Дракон",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, авокадо, тобико, снежный краб, угорь, соус унаги, кунжут белый, сыр сливочный",
+    "weight": 240,
+    "price": 649,
+    "category": 1,
+    "rating": 2,
+    "nutritionFacts": {
+      "calories": 220,
+      "protein": 7.4,
+      "fat": 10.6,
+      "carbohydrate": 23.9
+    }
+  },
+  {
+    "id": "2",
+    "imageUrl": "img/rolls/sake_maki.jpg",
+    "title": "Сяке маки",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, лосось",
+    "weight": 130,
+    "price": 249,
+    "category": 1,
+    "rating": 3,
+    "nutritionFacts": {
+      "calories": 183.5,
+      "protein": 7.6,
+      "fat": 2.6,
+      "carbohydrate": 32.3
+    }
+  },
+  {
+    "id": "3",
+    "imageUrl": "img/rolls/lava_abi.jpg",
+    "title": "Лава эби",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, кальмар, салат, огурец, сыр сливочный, тобико, майонез, креветка",
+    "weight": 215,
+    "price": 299,
+    "category": 1,
+    "rating": 4,
+    "nutritionFacts": {
+      "calories": 204.7,
+      "protein": 5.7,
+      "fat": 9.6,
+      "carbohydrate": 23.8
+    }
+  },
+  {
+    "id": "4",
+    "imageUrl": "img/rolls/california.jpg",
+    "title": "Калифорния",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, майонез, авокадо, снежный краб, тобико",
+    "weight": 205,
+    "price": 349,
+    "category": 1,
+    "rating": 5,
+    "nutritionFacts": {
+      "calories": 179.6,
+      "protein": 6.9,
+      "fat": 5.2,
+      "carbohydrate": 26.3
+    }
+  },
+  {
+    "id": "5",
+    "imageUrl": "img/rolls/salmon_tobiko.jpg",
+    "title": "Лосось с тобико",
+    "description": "Лосось жареный, сыр сливочный, тобико, рис, нори",
+    "weight": 185,
+    "price": 399,
+    "category": 1,
+    "rating": 6,
+    "nutritionFacts": {
+      "calories": 269.8,
+      "protein": 15.4,
+      "fat": 10.8,
+      "carbohydrate": 27.7
+    }
+  },
+  {
+    "id": "6",
+    "imageUrl": "img/rolls/aby_maki.jpg",
+    "title": "Эби маки",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, салат, сыр сливочный, креветка, тобико",
+    "weight": 160,
+    "price": 299,
+    "category": 1,
+    "rating": 7,
+    "nutritionFacts": {
+      "calories": 179.4,
+      "protein": 7.0,
+      "fat": 4.8,
+      "carbohydrate": 27
+    }
+  },
+  {
+    "id": "7",
+    "imageUrl": "img/rolls/avocado_sake.jpg",
+    "title": "Авокадо сяке",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, сыр сливочный, лосось, авокадо, соус унаги, майонез, кунжут чёрный",
+    "weight": 235,
+    "price": 399,
+    "category": 1,
+    "rating": 8,
+    "nutritionFacts": {
+      "calories": 214.8,
+      "protein": 5.2,
+      "fat": 11,
+      "carbohydrate": 23.8
+    }
+  },
+  {
+    "id": "8",
+    "imageUrl": "img/rolls/kawaii.jpg",
+    "title": "Каваи",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, тобико, сыр сливочный, огурец, снежный краб, майонез, паста кимчи",
+    "weight": 205,
+    "price": 249,
+    "category": 1,
+    "rating": 9,
+    "nutritionFacts": {
+      "calories": 225.1,
+      "protein": 8.6,
+      "fat": 12.1,
+      "carbohydrate": 19.6
+    }
+  },
+  {
+    "id": "9",
+    "imageUrl": "img/rolls/bright_salmon.jpg",
+    "title": "Яркий лосось",
+    "description": "Лосось жареный, морковь в темпуре, лук зелёный, соус лава, кальмар, кунжут чёрный, кунжут белый, рис, нори",
+    "weight": 195,
+    "price": 349,
+    "category": 1,
+    "rating": 10,
+    "nutritionFacts": {
+      "calories": 269.5,
+      "protein": 14.4,
+      "fat": 9.4,
+      "carbohydrate": 31.9
+    }
+  },
+  {
+    "id": "10",
+    "imageUrl": "img/tempura/sake_tempura.jpg",
+    "title": "Сяке темпура",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, лосось, лосось холодного копчения, огурец, мука, яйцо, сухари панировочные",
+    "weight": 190,
+    "price": 349,
+    "category": 2,
+    "rating": 11,
+    "nutritionFacts": {
+      "calories": 168.7,
+      "protein": 7.1,
+      "fat": 1.9,
+      "carbohydrate": 30.8
+    }
+  },
+  {
+    "id": "11",
+    "imageUrl": "img/tempura/abi_tempura.jpg",
+    "title": "Эби темпура",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, сыр сливочный, креветка, майонез, паста кимчи, мука, яйцо, сухари панировочные",
+    "weight": 175,
+    "price": 249,
+    "category": 2,
+    "rating": 12,
+    "nutritionFacts": {
+      "calories": 207.6,
+      "protein": 6.6,
+      "fat": 6.4,
+      "carbohydrate": 30.8
+    }
+  },
+  {
+    "id": "12",
+    "imageUrl": "img/tempura/unagi_tempura.jpg",
+    "title": "Унаги темпура",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, угорь, сыр сливочный, авокадо, имбирь маринованный, мука, яйцо, сухари панировочные, соус унаги, кунжут белый",
+    "weight": 220,
+    "price": 399,
+    "category": 2,
+    "rating": 13,
+    "nutritionFacts": {
+      "calories": 207.5,
+      "protein": 10.4,
+      "fat": 7.1,
+      "carbohydrate": 25.9
+    }
+  },
+  {
+    "id": "13",
+    "imageUrl": "img/tempura/ardent_shrimp.jpg",
+    "title": "Пылкая креветка",
+    "description": "Рис, мицукан, тортилья, сыр сливочный, креветка, салат, кляр, сухари панировочные, соус терияки, соус сырный хайнц, лук зелёный, лук кранч, начос, тобико",
+    "weight": 320,
+    "price": 299,
+    "category": 2,
+    "rating": 14,
+    "nutritionFacts": {
+      "calories": 208.8,
+      "protein": 6.3,
+      "fat": 6.3,
+      "carbohydrate": 32.8
+    }
+  },
+  {
+    "id": "14",
+    "imageUrl": "img/tempura/philadelphia_tempura.jpg",
+    "title": "Филадельфия темпура",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, лосось, снежный краб, мука, яйцо, сухари панировочные, сыр сливочный",
+    "weight": 215,
+    "price": 299,
+    "category": 2,
+    "rating": 15,
+    "nutritionFacts": {
+      "calories": 215.2,
+      "protein": 6.9,
+      "fat": 7.9,
+      "carbohydrate": 29.2
+    }
+  },
+  {
+    "id": "15",
+    "imageUrl": "img/sushi/unagi.jpg",
+    "title": "Унаги",
+    "description": "Рис, мицукан, сахар, комбу, соль, угорь, соус унаги, кунжут белый",
+    "weight": 38,
+    "price": 149,
+    "category":3,
+    "rating": 16,
+    "nutritionFacts": {
+      "calories": 140.1,
+      "protein": 9.4,
+      "fat": 1.7,
+      "carbohydrate": 20
+    }
+  },
+  {
+    "id": "16",
+    "imageUrl": "img/sushi/abi.jpg",
+    "title": "Эби",
+    "description": "Рис, мицукан, сахар, комбу, соль, креветка, сыр сливочный",
+    "weight": 35,
+    "price": 99,
+    "category":3,
+    "rating": 17,
+    "nutritionFacts": {
+      "calories": 135.7,
+      "protein": 9.3,
+      "fat": 1,
+      "carbohydrate": 22.4
+    }
+  },
+  {
+    "id": "17",
+    "imageUrl": "img/sushi/sake.jpg",
+    "title": "Сяке",
+    "description": "Рис, мицукан, сахар, комбу, соль, лосось",
+    "weight": 35,
+    "price": 149,
+    "category":3,
+    "rating": 18,
+    "nutritionFacts": {
+      "calories": 367.7,
+      "protein": 31.4,
+      "fat": 17.0,
+      "carbohydrate": 22.4
+    }
+  },
+  {
+    "id": "18",
+    "imageUrl": "img/sushi/guncan_shrimp.jpg",
+    "title": "Креветка гункан",
+    "description": "Рис, мицукан, сахар, комбу, соль, нори, креветка, сыр гауда, майонез, паста кимчи",
+    "weight": 54,
+    "price": 129,
+    "category":3,
+    "rating": 19,
+    "nutritionFacts": {
+      "calories": 255.1,
+      "protein": 13.8,
+      "fat": 9.7,
+      "carbohydrate": 28.3
+    }
+  },
+  {
+    "id": "19",
+    "imageUrl": "img/sets/hot_secret.png",
+    "title": "Горячий секрет",
+    "description": "Он останется только между вами. Раздели со второй половинкой горячие роллы с разнообразной начинкой. Состав: Цезарь темпура, Цезарь BIG. Филадельфия темпура, Сяке темпура, Эби темпура",
+    "weight": 1175,
+    "price": 1349,
+    "category": 4,
+    "rating": 20,
+    "nutritionFacts": {
+      "calories": 207.7,
+      "protein": 6.6,
+      "fat": 7.1,
+      "carbohydrate": 29.3
+    }
+  },
+  {
+    "id": "20",
+    "imageUrl": "img/sets/three_caesars.png",
+    "title": "Три Цезаря",
+    "description": "Для любителей нежной курочки. Популярный салат свернули в ролл и приготовили 3 разными способами. Пробуй! Состав: Цезарь, Цезарь темпура, Цезарь BIG",
+    "weight": 790,
+    "price": 699,
+    "category": 4,
+    "rating": 21,
+    "nutritionFacts": {
+      "calories": 216.7,
+      "protein": 6.7,
+      "fat": 8.7,
+      "carbohydrate": 27.9
+    }
+  },
+  {
+    "id": "21",
+    "imageUrl": "img/sets/express№1.png",
+    "title": "Экспресс №1",
+    "description": "Состав: Филадельфия с огурцом, Филадельфия с луком, Цезарь темпура, Эби темпура",
+    "weight": 955,
+    "price": 1799,
+    "category": 4,
+    "rating": 22,
+    "nutritionFacts": {
+      "calories": 208.6,
+      "protein": 7.8,
+      "fat": 8.8,
+      "carbohydrate": 24.6
+    }
+  },
+  {
+    "id": "22",
+    "imageUrl": "img/sets/ardent_fujoku.png",
+    "title": "Пылкий Фудзоку",
+    "description": "Запечённый сет с лососем, креветкой и курицей так и рвётся на стол.Состав: Запечённый с курицей NEW, Запечённый с креветкой, Запечённая филадельфия с лососем, Веган-микс",
+    "weight": 920,
+    "price": 999,
+    "category": 4,
+    "rating": 23,
+    "nutritionFacts": {
+      "calories": 242.7,
+      "protein": 8.1,
+      "fat": 13.0,
+      "carbohydrate": 23.3
+    }
+  },
+  {
+    "id": "23",
+    "imageUrl": "img/sets/cool_suteki.png",
+    "title": "Классный Сутэки",
+    "description": "Реально кайфовый сет с лососем для романтического вечера со второй половинкой.Состав: Нежный лосось, Лосось с тобико, Сяке, Эби",
+    "weight": 485,
+    "price": 899,
+    "category": 4,
+    "rating": 24,
+    "nutritionFacts": {
+      "calories": 237,
+      "protein": 12.6,
+      "fat": 9.2,
+      "carbohydrate": 25.9
+    }
+  },
+  {
+    "id": "24",
+    "imageUrl": "img/sets/fast_hayaku.png",
+    "title": "Резвый Хаяку",
+    "description": "Не жди повода: Резвый Хаяку готов радовать тебя сочным лососем каждый день.Состав: Лосось с тобико, Перчик лосося, Яркий лосось",
+    "weight": 605,
+    "price": 1099,
+    "category": 4,
+    "rating": 25,
+    "nutritionFacts": {
+      "calories": 277.8,
+      "protein": 13.6,
+      "fat": 12.6,
+      "carbohydrate": 27.5
+    }
+  }
+]

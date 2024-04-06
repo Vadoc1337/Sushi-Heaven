@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# ようこそ
+![Тайные виды на гору Фудзи](src/assets/fuji.gif)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# |RU|
 
-## Available Scripts
+##  Добро пожаловать на мой **React** проект магазина суши  **`Sushi Heaven`** 🍣 🤗
 
-In the project directory, you can run:
+## 📝 О проекте
 
-### `npm start`
+Целью этого проекта было создание веб-сайта магазина суши 🍱. Проект разрабатывался в учебных целях при помощи видеоуроков с ютуба, информацией с официальных и не очень сайтов по различным технологиям, ну и в дальнейшем допиливался 
+мною (исправлял различные баги, фиксил верстку). 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Создав этот сайт, я ознакомился c `Typescript-ом`, научился управлять состоянием с помощью `Redux Toolkit`, улучшил знания в обработке асинхронных запросов. В ходе разработки мною был создан собственный хук,
+использованы различные сторонние библиотеки и хуки. Разумеется использовал препроцессор `SASS`, а также методологию БЭМ и другие современные способы структурирования кода.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ⚙️ Функционал
+Сайт представляет собой магазин суши, где вы можете выбрать и купить различные товары. Основными функциями являются:
+- поиск товаров
+- фильтрация по категориям
+- сортировка по цене / популярности / алфавиту
+- возможность посмотреть количество калорий в товарах
+- добавление в корзину товаров и управление их количеством
 
-### `npm test`
+## 💻 Technologies
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- TypeScript
+- React, React Hooks
+- React Router
+- Fetch + Axios
+- Redux Toolkit
+- CSS-модули / SASS
+- Skeleton
+- Code Splitting
+- React Pagination
+- Lodash.Debounce
+- Reactjs-popup
 
-### `npm run build`
+## 🚀 Первоначальный запуск
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Загружаем проект. Затем, в каталоге проекта в терминале используйте следующую команду для запуска приложения:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+  npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Приложение будет заупущено в режиме разработчика.\
+Введите [http://localhost:3000](http://localhost:3000) в ваш браузер.
 
-### `npm run eject`
+## ✅ Что можно добавить
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [ ] Сделать кнопку переключения на английский язык, при нажатии на которую менялись бы рубли на доллары и текст на английский и обратно (сделать цену на доллары актуальной на дату курса ЦБ РФ)
+- [ ] Реализовать функционал на бэкенде и фронте по оформлению товаров с дальнейшей отправкой этих данных путем email-а 📨 в сам магазин
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# |EN|
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# ようこそ
+![Secret views of Mount Fuji](src/assets/fuji.gif)
 
-## Learn More
+## Welcome to my **React** Sushi Restaurant project **`Sushi Heaven`** 🍣 🤗
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 📝 About the project
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+The purpose of this project was to create a sushi restaurant website 🍱. The project was developed for educational purposes with the help of video tutorials from YouTube, information from official and not-so-official sites on various 
+technologies, and was further completed
+by me (fixed various bugs, fixed the layout).
 
-### Code Splitting
+After creating this site, I got acquainted with the `Typescript`, learned how to manage the state using the `Redux Toolkit`, and improved my knowledge in processing asynchronous requests. During the development, I created my own hook,
+used various third-party libraries and hooks. Of course, I used the `SASS` preprocessor, as well as the BEM methodology and other modern ways of structuring code.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## ⚙️ Functionality
+The site is a sushi restaurant where you can choose and buy various products. The main functions are:
+- product search
+- filtering by category
+- sort by price / popularity / alphabet
+- the ability to view the number of calories in products
+- adding products to the cart and managing their quantity
 
-### Analyzing the Bundle Size
+## 💻 Technologies
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- TypeScript
+- React, React Hooks
+- React Router
+- Fetch + Axios
+- Redux Toolkit
+- CSS modules / SASS
+- Skeleton
+- Code Splitting
+- React Pagination
+- Lodash.Debounce
+- Reactjs-popup
 
-### Making a Progressive Web App
+## 🚀 Initial launch
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Uploading the project. Then, in the project directory in the terminal, use the following command to launch the application:
 
-### Advanced Configuration
+```bash
+npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The application will be launched in developer mode.\
+Enter [http://localhost:3000 ](http://localhost:3000 ) to your browser.
 
-### Deployment
+## ✅ What can be added
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [ ] Make a button to switch to English, when clicked, which would change rubles to dollars and text to English and back (make the price of dollars relevant on the date of the exchange rate of the Central Bank of the Russian Federation)
+- [ ] Implement functionality on the backend and frontend for the registration of goods with further sending of this data by email 📨 to the restaurant itself
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

@@ -1,0 +1,50 @@
+@import "../../scss/variables.scss";
+
+.root {
+    li {
+        display: inline-block;
+        //position: relative;
+    }
+
+    a {
+        display: inline-block;
+        color: $background;
+        text-align: center;
+        height: 45px;
+        width: 45px;
+        line-height: 42px;
+        border: 1px solid $background;
+        border-radius: 30px;
+        margin-right: 10px;
+        cursor: pointer;
+        @media (max-width: 315px) {
+            height: 35px;
+            width: 35px;
+            line-height: 34px;
+        }
+
+        &:hover {
+            background-color: $background;
+            color: #fff;
+        }
+    }
+
+    :global {
+        .selected {
+            a {
+                background-color: $background;
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+@media (max-width: 766px) {
+    .paginationBlock{
+        transition: all $duration ease-in-out;
+        display: flex;
+        justify-content: center;
+    }
+}
+
