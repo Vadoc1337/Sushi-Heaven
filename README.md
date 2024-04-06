@@ -54,9 +54,6 @@
 
 # |EN|
 
-# ようこそ
-![Secret views of Mount Fuji](src/assets/fuji.gif)
-
 ## Welcome to my **React** Sushi Restaurant project **`Sushi Heaven`** 🍣 🤗
 
 ## 📝 About the project
