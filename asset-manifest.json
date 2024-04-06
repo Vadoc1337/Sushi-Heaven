@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Sushi-Heaven/static/css/main.8d305a9d.css",
-    "main.js": "/Sushi-Heaven/static/js/main.e4f93978.js",
+    "main.js": "/Sushi-Heaven/static/js/main.1fea061e.js",
     "Cart.js": "/Sushi-Heaven/static/js/Cart.1f31cd7f.chunk.js",
     "NotFound.js": "/Sushi-Heaven/static/js/NotFound.6fd3a685.chunk.js",
     "static/media/empty-cart.svg": "/Sushi-Heaven/static/media/empty-cart.3947aa15c6883fafbdee72c333d8efe6.svg",
@@ -9,12 +9,12 @@
     "static/media/sushi-logo.svg": "/Sushi-Heaven/static/media/sushi-logo.76798d54c8b641e95919bd508be469af.svg",
     "index.html": "/Sushi-Heaven/index.html",
     "main.8d305a9d.css.map": "/Sushi-Heaven/static/css/main.8d305a9d.css.map",
-    "main.e4f93978.js.map": "/Sushi-Heaven/static/js/main.e4f93978.js.map",
+    "main.1fea061e.js.map": "/Sushi-Heaven/static/js/main.1fea061e.js.map",
     "Cart.1f31cd7f.chunk.js.map": "/Sushi-Heaven/static/js/Cart.1f31cd7f.chunk.js.map",
     "NotFound.6fd3a685.chunk.js.map": "/Sushi-Heaven/static/js/NotFound.6fd3a685.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8d305a9d.css",
-    "static/js/main.e4f93978.js"
+    "static/js/main.1fea061e.js"
   ]
 }
