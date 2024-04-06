@@ -1,8 +1,10 @@
 {
+    "homepage": "https://Vadoc1337.github.io/Sushi-Heaven",
     "name": "my-app",
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "-": "^0.0.1",
         "@react-buddy/ide-toolbox": "^2.4.0",
         "@reduxjs/toolkit": "^2.0.1",
         "@testing-library/jest-dom": "^5.17.0",
@@ -14,9 +16,11 @@
         "@types/react": "^18.2.63",
         "@types/react-dom": "^18.2.20",
         "@types/redux-thunk": "^2.1.0",
+        "D": "^1.0.0",
         "ahooks": "^3.7.10",
         "axios": "^1.6.7",
         "clsx": "^2.1.0",
+        "gh-pages": "^6.1.1",
         "less": "^4.2.0",
         "lodash.debounce": "^4.0.8",
         "qs": "^6.11.2",
@@ -36,6 +40,8 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
