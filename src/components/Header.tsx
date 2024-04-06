@@ -39,14 +39,14 @@ export const Header: React.FC = () => {
         </Link>
         {windowWidth <= 767 ? (
           <>
-            {location.pathname !== "/Sushi-Heaven/cart" && <Search />}
+            {location.pathname !== "/cart" && <Search />}
           </>
         ) : (
           <>
-            {location.pathname !== "/Sushi-Heaven/cart" && <Search />}
+            {location.pathname !== "/cart" && <Search />}
             <div className="header__cart">
-              {location.pathname !== "/Sushi-Heaven/cart" && (
-                <Link to="/Sushi-Heaven/cart" className="button button--cart">
+              {location.pathname !== "/cart" && (
+                <Link to="/cart" className="button button--cart">
                   <span>{totalPrice} ₽</span>
                   <div className="button__delimiter"></div>
                   <svg
