@@ -67,9 +67,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
-    min-width: 32px;
+    width: 29px;
+    height: 29px;
+    min-width: 29px;
     padding: 0;
     border-width: 2px;
   }
@@ -181,9 +181,9 @@
 // * Adaptive styles
 @media (max-width: 714px) {
   .button--circle {
-    width: 21px;
-    height: 21px;
-    min-width: 21px;
+    width: 23px;
+    height: 23px;
+    min-width: 23px;
     border-width: 1px;
     transition: all $duration ease-in-out;
   }

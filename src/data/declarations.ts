@@ -74,6 +74,7 @@ interface IFilterSliceState {
   sort: IList;
   orderType: IList;
   visitedCategory?: number | null;
+  isSearch: boolean;
 }
 
 interface IList {
@@ -81,7 +82,7 @@ interface IList {
   sortProperty?: "rating" | "price" | "title";
 }
 
-// * Others declarations
+// * Other declarations
 
 interface ICategoriesProps {
   value: number;

@@ -1,19 +1,17 @@
 import React from "react";
-import qs from "qs";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
 
 import { useAppDispatch } from "../redux/store";
 import {
   setCategoryId,
   setCurrentPage,
   setOrderType,
-  setFilters,
+  setIsSearch,
   selectFilter,
 } from "../redux/slices/filterSlice";
 import { fetchSushi, selectSushiData } from "../redux/slices/sushiSlices";
 
-import { IList, Status } from "../data/declarations";
+import { Status } from "../data/declarations";
 
 import {
   Categories,
@@ -21,28 +19,28 @@ import {
   SushiBlock,
   Skeleton,
   Pagination,
-  list,
 } from "../components";
 
 const Home = () => {
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
-  const isSearch = React.useRef(false);
-  const isMounted = React.useRef(false);
 
-  const { categoryId, sort, currentPage, orderType, searchValue } =
+  const { categoryId, sort, currentPage, orderType, searchValue, isSearch } =
     useSelector(selectFilter);
-  // вот этот вот код возвращает начальные значения из стора
+  // данный код возвращает начальные значения из стора
 
   const { items, status } = useSelector(selectSushiData);
 
   const onChangeCategory = React.useCallback(
-      (idx: number) => {
-        dispatch(setCategoryId(idx));
-        localStorage.setItem("categoryId", idx.toString());
-      },
-      [dispatch],
+    (idx: number) => {
+      localStorage.setItem("categoryId", idx.toString());
+      dispatch(setCategoryId(idx));
+      dispatch(setCurrentPage(1));
+    },
+    [dispatch],
   );
+
+  const getCategoryIdString = localStorage.getItem("categoryId");
+  const getCategoryId = getCategoryIdString ? +getCategoryIdString : 1;
   const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
   };
@@ -53,19 +51,19 @@ const Home = () => {
 
   const sushi = items.map((obj: any) => <SushiBlock key={obj.id} {...obj} />);
 
-  const skeletons = [...new Array(6)].map((_, index) => (
+  const skeletons = [...new Array(4)].map((_, index) => (
     <Skeleton key={index} />
   ));
   const getSushi = async () => {
     const category =
-      categoryId > 0 && !searchValue ? `category=${categoryId}` : "";
+      categoryId > 0 && !searchValue ? `category=${getCategoryId}` : "";
     const search = searchValue ? `&search=${searchValue}` : "";
     dispatch(
       fetchSushi({
         currentPage,
         category,
         sort: {
-          sortProperty: sort?.sortProperty, // Костыльчик чтобы значение по умолчанию работало
+          sortProperty: sort.sortProperty,
         },
         orderType,
         search,
@@ -74,62 +72,28 @@ const Home = () => {
     window.scrollTo(0, 0);
   };
 
-  // Если изменили параметры и был первый рендер то ставим параметр isMounted.current = true
-  React.useEffect(() => {
-    if (isMounted.current) {
-      const queryString = qs.stringify({
-        currentPage,
-        categoryId,
-        sortProperty: sort.sortProperty,
-        orderType: orderType.name,
-      });
-      navigate(`?${queryString}`);
-    }
-    isMounted.current = true;
-  }, [navigate, currentPage, categoryId, sort.sortProperty, orderType.name]);
-  // Если был первый рендер то проверяем URL параметры и сохраняем в Redux
-
-  React.useEffect(() => {
-    if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
-      const sort = list.find(
-        (obj) => obj.sortProperty === params.sortProperty,
-      ) as IList;
-      const orderType = {
-        name: params.orderType as string,
-      };
-      dispatch(
-        setFilters({
-          ...params,
-          sort,
-          orderType,
-          categoryId: Number(params.categoryId),
-          currentPage: Number(params.currentPage),
-          searchValue: params.searchValue as string,
-        }),
-      );
-      isSearch.current = true;
-    }
-  }, [dispatch]);
-
   //Если был первий рендер то запрашиваем роллы/суши
   React.useEffect(() => {
     window.scrollTo(0, 0);
-    if (!isSearch.current) {
-      getSushi()
+    if (!isSearch) {
+      getSushi();
     }
-    isSearch.current = false;
-  }, [categoryId, sort.sortProperty, searchValue, currentPage, orderType.name]);
+    dispatch(setIsSearch(false));
+  }, [
+    getCategoryId,
+    sort.sortProperty,
+    searchValue,
+    currentPage,
+    orderType.name,
+  ]);
 
-  const getCategoryIdString = localStorage.getItem("categoryId");
-  const getCategoryId = getCategoryIdString ? +getCategoryIdString : 1;
   React.useEffect(() => {
-    if (searchValue) {
+    if (isSearch) {
       dispatch(setCategoryId(0));
     } else {
       dispatch(setCategoryId(getCategoryId));
     }
-  }, [searchValue,categoryId]);
+  }, [isSearch, categoryId, dispatch]);
 
   return (
     <div className="container">

@@ -9,12 +9,10 @@ import { selectFilter } from "../../redux/slices/filterSlice";
 
 export const Pagination = ({ currentPage, onChangePage }: IPaginationProps) => {
   const [totalPages, setTotalPages] = React.useState(1);
-  const [resetPage, setResetPage] = React.useState(false);
-  const { categoryId } = useSelector(selectFilter);
+  const {searchValue } = useSelector(selectFilter);
 
-  React.useEffect(() => {
-    setResetPage(true);
-  }, [categoryId]);
+  const getCategoryIdString = localStorage.getItem("categoryId");
+  const getCategoryId = getCategoryIdString ? +getCategoryIdString :1;
 
   React.useEffect(() => {
     const fetchData = async () => {
@@ -23,7 +21,7 @@ export const Pagination = ({ currentPage, onChangePage }: IPaginationProps) => {
           "https://654e75f6cbc325355742e3fc.mockapi.io/items",
           {
             params: {
-              category: categoryId,
+              category: getCategoryId,
             },
           },
         );
@@ -36,18 +34,12 @@ export const Pagination = ({ currentPage, onChangePage }: IPaginationProps) => {
       }
     };
 
-    if (resetPage) {
-      setTimeout(() => {
-        onChangePage(1);
-        setResetPage(false);
-      }, 100);
-    }
-    if (categoryId >0) {
+    if (getCategoryId >0) {
       fetchData();
     }
-  }, [categoryId]);
+  }, [getCategoryId]);
 
-  if (totalPages > 1 && categoryId>0) {
+  if (totalPages > 1 && searchValue.length === 0) {
     return (
       <div className={styles.paginationBlock}>
         <ReactPaginate

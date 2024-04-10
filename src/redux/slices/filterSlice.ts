@@ -4,7 +4,7 @@ import { IFilterSliceState, IList } from "../../data/declarations";
 
 const initialState: IFilterSliceState = {
   searchValue: "",
-  categoryId: -1,
+  categoryId: 1,
   currentPage: 1,
   sort: {
     name: "популярности",
@@ -13,6 +13,7 @@ const initialState: IFilterSliceState = {
   orderType: {
     name: "asc",
   },
+  isSearch: false,
 };
 
 const filterSlice = createSlice({
@@ -21,6 +22,9 @@ const filterSlice = createSlice({
   reducers: {
     setCategoryId(state, action: PayloadAction<number>) {
       state.categoryId = action.payload;
+    },
+    setIsSearch(state, action: PayloadAction<boolean>) {
+      state.isSearch = action.payload;
     },
     setSearchValue(state, action: PayloadAction<string>) {
       state.searchValue = action.payload;
@@ -53,6 +57,7 @@ export const {
   setOrderType,
   setFilters,
   setSearchValue,
+  setIsSearch,
 } = filterSlice.actions;
 
 export default filterSlice.reducer;

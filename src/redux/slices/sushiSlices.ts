@@ -14,13 +14,15 @@ export const fetchSushi = createAsyncThunk<ISushi[], IFetchSushiArgs>(
     try {
       const { currentPage, category, sort, orderType, search } = params;
       let limit = 4;
-      let page: number | string = currentPage
+      let page: number | string = currentPage;
+
       if (search) {
         limit = 100;
       }
       if (+category === 0) {
         page = "";
       }
+
       const { data } = await axios.get<ISushi[]>(
         `https://654e75f6cbc325355742e3fc.mockapi.io/items?page=${page}&limit=${limit}&${category}&sortBy=${sort.sortProperty}&order=${orderType.name}${search}`,
       );
