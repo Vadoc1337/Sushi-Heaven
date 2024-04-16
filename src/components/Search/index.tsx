@@ -2,12 +2,13 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import debounce from "lodash.debounce";
 
-import {setSearchValue } from "../../redux/slices/filterSlice";
+import { setSearchValue } from "../../redux/slices/filterSlice";
 import styles from "./Search.module.scss";
 
 export const Search = () => {
   const dispatch = useDispatch();
   const [value, setValue] = React.useState("");
+  const [isVisible, setIsVisible] = React.useState(true);
   const inputRef = React.useRef<HTMLInputElement>(null);
 
   const updateSearchValue = React.useCallback(
@@ -30,8 +31,18 @@ export const Search = () => {
     setValue(inputValue);
   };
 
+  React.useEffect(() => {
+    const handleVisibility = () => {
+      const currentPath = window.location.pathname;
+      setIsVisible(!currentPath.includes("/Sushi-Heaven/cart"));
+    };
+
+    handleVisibility();
+  }, [window.location.pathname]);
+
+
   return (
-    <div className={styles.root}>
+    <div className={styles.root} style={isVisible ? {} : { display: "none" }}>
       <svg
         className={styles.icon}
         fill="#000000"

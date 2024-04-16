@@ -100,6 +100,16 @@ interface ISortProps {
   value: IList;
 }
 
+interface AnimationLayoutProps {
+  children: React.ReactNode;
+}
+
+interface IMarginScaleData {
+  height: number;
+  scale: number;
+  marginTopBottom: number;
+}
+
 export { Status };
 export type {
   ISushi,
@@ -113,4 +123,6 @@ export type {
   IFilterSliceState,
   ISushiSliceState,
   IFetchSushiArgs,
+  AnimationLayoutProps,
+  IMarginScaleData,
 };

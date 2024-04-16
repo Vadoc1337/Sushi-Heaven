@@ -305,13 +305,30 @@
   },
   {
     "id": "19",
+    "imageUrl": "/Sushi-Heaven/img/sushi/chukka_gunkan.jpg",
+    "title": "Чука гункан",
+    "description": "Рис, мицукан, сахар, комбу, соль,чука, нори, соус кунжутный",
+    "weight": 40,
+    "price": 49,
+    "category":3,
+    "rating": 20,
+    "nutritionFacts": {
+      "calories": 181.2,
+      "protein": 3.6,
+      "fat": 6.9,
+      "carbohydrate": 26.1
+    }
+  },
+
+  {
+    "id": "20",
     "imageUrl": "/Sushi-Heaven/img/sets/hot_secret.png",
     "title": "Горячий секрет",
     "description": "Он останется только между вами. Раздели со второй половинкой горячие роллы с разнообразной начинкой. Состав: Цезарь темпура, Цезарь BIG. Филадельфия темпура, Сяке темпура, Эби темпура",
     "weight": 1175,
     "price": 1349,
     "category": 4,
-    "rating": 20,
+    "rating": 21,
     "nutritionFacts": {
       "calories": 207.7,
       "protein": 6.6,
@@ -320,14 +337,14 @@
     }
   },
   {
-    "id": "20",
+    "id": "21",
     "imageUrl": "/Sushi-Heaven/img/sets/three_caesars.png",
     "title": "Три Цезаря",
     "description": "Для любителей нежной курочки. Популярный салат свернули в ролл и приготовили 3 разными способами. Пробуй! Состав: Цезарь, Цезарь темпура, Цезарь BIG",
     "weight": 790,
     "price": 699,
     "category": 4,
-    "rating": 21,
+    "rating": 22,
     "nutritionFacts": {
       "calories": 216.7,
       "protein": 6.7,
@@ -336,14 +353,14 @@
     }
   },
   {
-    "id": "21",
+    "id": "22",
     "imageUrl": "/Sushi-Heaven/img/sets/express№1.png",
     "title": "Экспресс №1",
     "description": "Состав: Филадельфия с огурцом, Филадельфия с луком, Цезарь темпура, Эби темпура",
     "weight": 955,
     "price": 1799,
     "category": 4,
-    "rating": 22,
+    "rating": 23,
     "nutritionFacts": {
       "calories": 208.6,
       "protein": 7.8,
@@ -352,14 +369,14 @@
     }
   },
   {
-    "id": "22",
+    "id": "23",
     "imageUrl": "/Sushi-Heaven/img/sets/ardent_fujoku.png",
     "title": "Пылкий Фудзоку",
     "description": "Запечённый сет с лососем, креветкой и курицей так и рвётся на стол.Состав: Запечённый с курицей NEW, Запечённый с креветкой, Запечённая филадельфия с лососем, Веган-микс",
     "weight": 920,
     "price": 999,
     "category": 4,
-    "rating": 23,
+    "rating": 24,
     "nutritionFacts": {
       "calories": 242.7,
       "protein": 8.1,
@@ -368,14 +385,14 @@
     }
   },
   {
-    "id": "23",
+    "id": "24",
     "imageUrl": "/Sushi-Heaven/img/sets/cool_suteki.png",
     "title": "Классный Сутэки",
     "description": "Реально кайфовый сет с лососем для романтического вечера со второй половинкой.Состав: Нежный лосось, Лосось с тобико, Сяке, Эби",
     "weight": 485,
     "price": 899,
     "category": 4,
-    "rating": 24,
+    "rating": 25,
     "nutritionFacts": {
       "calories": 237,
       "protein": 12.6,
@@ -384,14 +401,14 @@
     }
   },
   {
-    "id": "24",
+    "id": "25",
     "imageUrl": "/Sushi-Heaven/img/sets/fast_hayaku.png",
     "title": "Резвый Хаяку",
     "description": "Не жди повода: Резвый Хаяку готов радовать тебя сочным лососем каждый день.Состав: Лосось с тобико, Перчик лосося, Яркий лосось",
     "weight": 605,
     "price": 1099,
     "category": 4,
-    "rating": 25,
+    "rating": 26,
     "nutritionFacts": {
       "calories": 277.8,
       "protein": 13.6,

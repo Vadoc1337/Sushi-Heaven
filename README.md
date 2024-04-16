@@ -34,6 +34,7 @@ _________
 - React Pagination
 - Lodash.Debounce
 - Reactjs-popup
+- Framer motion
 
 ## 🚀 Первоначальный запуск
 
@@ -50,6 +51,7 @@ _________
 
 - [ ] Сделать кнопку переключения на английский язык, при нажатии на которую менялись бы рубли на доллары и текст на английский и обратно (сделать цену на доллары актуальной на дату курса ЦБ РФ)
 - [ ] Реализовать функционал на бэкенде и фронте по оформлению товаров с дальнейшей отправкой этих данных путем email-а 📨 в сам магазин
+- [ ] Типизировать и упорядочить некоторые участки кода
 
 ______________
 
@@ -86,7 +88,8 @@ The site is a sushi restaurant where you can choose and buy various products. Th
 - Code Splitting
 - React Pagination
 - Lodash.Debounce
-- Reactjs-popup
+- Reactjs-popup 
+- Framer motion
 
 ## 🚀 Initial launch
 
@@ -103,4 +106,5 @@ Enter [http://localhost:3000 ](http://localhost:3000 ) to your browser.
 
 - [ ] Make a button to switch to English, when clicked, which would change rubles to dollars and text to English and back (make the price of dollars relevant on the date of the exchange rate of the Central Bank of the Russian Federation)
 - [ ] Implement functionality on the backend and frontend for the registration of goods with further sending of this data by email 📨 to the restaurant itself
+- [ ] To type and organize some sections of the code
 

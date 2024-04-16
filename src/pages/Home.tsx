@@ -12,6 +12,7 @@ import {
 import { fetchSushi, selectSushiData } from "../redux/slices/sushiSlices";
 
 import { Status } from "../data/declarations";
+import useWindowWidth from "../hooks/useWindowWidth";
 
 import {
   Categories,
@@ -23,7 +24,15 @@ import {
 
 const Home = () => {
   const dispatch = useAppDispatch();
-
+  const topRef = React.useRef<HTMLDivElement>(null);
+  const windowWidth = useWindowWidth();
+  const scrollFunc = () => {
+    const headerElement = document.querySelector(`.header`);
+      headerElement!.scrollIntoView({
+          behavior: `smooth`,
+          block: `start`,
+        });
+  };
   const { categoryId, sort, currentPage, orderType, searchValue, isSearch } =
     useSelector(selectFilter);
   // данный код возвращает начальные значения из стора
@@ -44,7 +53,6 @@ const Home = () => {
   const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
   };
-
   const onChangeOrderType = (type: string) => {
     return dispatch(setOrderType({ name: type }));
   };
@@ -69,12 +77,16 @@ const Home = () => {
         search,
       }),
     );
-    window.scrollTo(0, 0);
+    if (windowWidth <= 1456) {
+      scrollFunc();
+    }
   };
 
   //Если был первий рендер то запрашиваем роллы/суши
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    if (windowWidth <= 1456) {
+      scrollFunc();
+    }
     if (!isSearch) {
       getSushi();
     }
@@ -96,7 +108,7 @@ const Home = () => {
   }, [isSearch, categoryId, dispatch]);
 
   return (
-    <div className="container">
+    <div className="container" ref={topRef}>
       <div className="content__top">
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
         <Sort
@@ -113,7 +125,9 @@ const Home = () => {
           <p>Попробуйте изменить запрос</p>
         </div>
       ) : (
-        <div className="content__items">
+        <div
+          className={`content__items ${searchValue ? `` : `without-search`}`}
+        >
           {status === Status.LOADING ? skeletons : sushi}
         </div>
       )}

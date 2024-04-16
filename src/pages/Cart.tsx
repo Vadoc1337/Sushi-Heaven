@@ -5,11 +5,19 @@ import { useSelector, useDispatch } from "react-redux";
 import { CartItem, CartEmpty } from "../components";
 import { clearItems, selectCart } from "../redux/slices/cartSlice";
 import useWindowWidth from "../hooks/useWindowWidth";
+import AnimationLayout from "../layots/AnimationLayout";
 
 const Cart = () => {
   const dispatch = useDispatch();
   const { totalPrice, items } = useSelector(selectCart);
   const windowWidth = useWindowWidth();
+  const scrollFunc = () => {
+    const headerElement = document.querySelector(`.content`);
+    headerElement!.scrollIntoView({
+      behavior: `smooth`,
+      block: `center`,
+    });
+  };
 
   const totalCount = items.reduce(
     (sum: number, item: any) => sum + item.count,
@@ -21,10 +29,12 @@ const Cart = () => {
   };
 
   if (!totalPrice) {
+    scrollFunc()
     return <CartEmpty />;
   }
 
   return (
+
     <div className="container container--cart">
       <div className="cart">
         <div className="cart__top">
@@ -106,11 +116,13 @@ const Cart = () => {
             )}
           </div>
         </div>
+        <AnimationLayout>
         <div className="content__items">
           {items.map((item: any) => (
             <CartItem key={item.id} {...item} />
           ))}
         </div>
+        </AnimationLayout>
         <div className="cart__bottom">
           <div className="cart__bottom-details">
             <span>

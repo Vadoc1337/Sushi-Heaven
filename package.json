@@ -20,6 +20,7 @@
         "ahooks": "^3.7.10",
         "axios": "^1.6.7",
         "clsx": "^2.1.0",
+        "framer-motion": "^11.0.28",
         "gh-pages": "^6.1.1",
         "less": "^4.2.0",
         "lodash.debounce": "^4.0.8",

@@ -6,16 +6,20 @@ import MainLayout from "./layots/MainLayout";
 
 import "./scss/app.scss";
 
-const Cart = React.lazy(() => import(/* webpackChunkName: "Cart" */ "./pages/Cart"));
-const NotFound = React.lazy(() => import(/* webpackChunkName: "NotFound" */ "./pages/NotFound"));
+const Cart = React.lazy(
+  () => import(/* webpackChunkName: "Cart" */ "./pages/Cart"),
+);
+const NotFound = React.lazy(
+  () => import(/* webpackChunkName: "NotFound" */ "./pages/NotFound"),
+);
 
 function App() {
   return (
     <Routes>
       <Route path="/Sushi-Heaven/" element={<MainLayout />}>
-        <Route path="" element={<Home />} />
+        <Route path="/Sushi-Heaven/" element={<Home />} />
         <Route
-          path="cart"
+          path="/Sushi-Heaven/cart"
           element={
             <React.Suspense
               fallback={<div className="container">Загрузка...</div>}
@@ -24,6 +28,18 @@ function App() {
             </React.Suspense>
           }
         />
+        <Route
+          path="*"
+          element={
+            <React.Suspense
+              fallback={<div className="container">Загрузка...</div>}
+            >
+              <NotFound />
+            </React.Suspense>
+          }
+        />
+      </Route>
+      <Route path="*" element={<MainLayout />}>
         <Route
           path="*"
           element={
