@@ -34,7 +34,7 @@ const ASPECT_RATIO_THRESHOLD = 1.72;
 
 export default function useDynamicStyles() {
   const location = useLocation();
-  const isCart = location.pathname === `/Sushi-Heaven/cart`;
+  const isCart = location.pathname === `sushi-heaven.vercel.app/cart`;
 
   const { searchValue } = useSelector(selectFilter);
   const { items } = useSelector(selectCart);

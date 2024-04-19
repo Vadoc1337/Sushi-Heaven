@@ -1,7 +1,7 @@
 [
   {
     "id": "0",
-    "imageUrl": "/Sushi-Heaven/img/rolls/philadelphia.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/rolls/philadelphia.jpg",
     "title": "Филадельфия",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, сыр сливочный, огурец, лосось",
     "weight": 270,
@@ -17,7 +17,7 @@
   },
   {
     "id": "1",
-    "imageUrl": "/Sushi-Heaven/img/rolls/dragon.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/rolls/dragon.jpg",
     "title": "Дракон",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, авокадо, тобико, снежный краб, угорь, соус унаги, кунжут белый, сыр сливочный",
     "weight": 240,
@@ -33,7 +33,7 @@
   },
   {
     "id": "2",
-    "imageUrl": "/Sushi-Heaven/img/rolls/sake_maki.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/rolls/sake_maki.jpg",
     "title": "Сяке маки",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, лосось",
     "weight": 130,
@@ -49,7 +49,7 @@
   },
   {
     "id": "3",
-    "imageUrl": "/Sushi-Heaven/img/rolls/lava_abi.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/rolls/lava_abi.jpg",
     "title": "Лава эби",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, кальмар, салат, огурец, сыр сливочный, тобико, майонез, креветка",
     "weight": 215,
@@ -65,7 +65,7 @@
   },
   {
     "id": "4",
-    "imageUrl": "/Sushi-Heaven/img/rolls/california.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/rolls/california.jpg",
     "title": "Калифорния",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, майонез, авокадо, снежный краб, тобико",
     "weight": 205,
@@ -81,7 +81,7 @@
   },
   {
     "id": "5",
-    "imageUrl": "/Sushi-Heaven/img/rolls/salmon_tobiko.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/rolls/salmon_tobiko.jpg",
     "title": "Лосось с тобико",
     "description": "Лосось жареный, сыр сливочный, тобико, рис, нори",
     "weight": 185,
@@ -97,7 +97,7 @@
   },
   {
     "id": "6",
-    "imageUrl": "/Sushi-Heaven/img/rolls/aby_maki.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/rolls/aby_maki.jpg",
     "title": "Эби маки",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, салат, сыр сливочный, креветка, тобико",
     "weight": 160,
@@ -113,7 +113,7 @@
   },
   {
     "id": "7",
-    "imageUrl": "/Sushi-Heaven/img/rolls/avocado_sake.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/rolls/avocado_sake.jpg",
     "title": "Авокадо сяке",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, сыр сливочный, лосось, авокадо, соус унаги, майонез, кунжут чёрный",
     "weight": 235,
@@ -129,7 +129,7 @@
   },
   {
     "id": "8",
-    "imageUrl": "/Sushi-Heaven/img/rolls/kawaii.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/rolls/kawaii.jpg",
     "title": "Каваи",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, тобико, сыр сливочный, огурец, снежный краб, майонез, паста кимчи",
     "weight": 205,
@@ -145,7 +145,7 @@
   },
   {
     "id": "9",
-    "imageUrl": "/Sushi-Heaven/img/rolls/bright_salmon.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/rolls/bright_salmon.jpg",
     "title": "Яркий лосось",
     "description": "Лосось жареный, морковь в темпуре, лук зелёный, соус лава, кальмар, кунжут чёрный, кунжут белый, рис, нори",
     "weight": 195,
@@ -161,7 +161,7 @@
   },
   {
     "id": "10",
-    "imageUrl": "/Sushi-Heaven/img/tempura/sake_tempura.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/tempura/sake_tempura.jpg",
     "title": "Сяке темпура",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, лосось, лосось холодного копчения, огурец, мука, яйцо, сухари панировочные",
     "weight": 190,
@@ -177,7 +177,7 @@
   },
   {
     "id": "11",
-    "imageUrl": "/Sushi-Heaven/img/tempura/abi_tempura.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/tempura/abi_tempura.jpg",
     "title": "Эби темпура",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, сыр сливочный, креветка, майонез, паста кимчи, мука, яйцо, сухари панировочные",
     "weight": 175,
@@ -193,7 +193,7 @@
   },
   {
     "id": "12",
-    "imageUrl": "/Sushi-Heaven/img/tempura/unagi_tempura.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/tempura/unagi_tempura.jpg",
     "title": "Унаги темпура",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, угорь, сыр сливочный, авокадо, имбирь маринованный, мука, яйцо, сухари панировочные, соус унаги, кунжут белый",
     "weight": 220,
@@ -209,7 +209,7 @@
   },
   {
     "id": "13",
-    "imageUrl": "/Sushi-Heaven/img/tempura/ardent_shrimp.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/tempura/ardent_shrimp.jpg",
     "title": "Пылкая креветка",
     "description": "Рис, мицукан, тортилья, сыр сливочный, креветка, салат, кляр, сухари панировочные, соус терияки, соус сырный хайнц, лук зелёный, лук кранч, начос, тобико",
     "weight": 320,
@@ -225,7 +225,7 @@
   },
   {
     "id": "14",
-    "imageUrl": "/Sushi-Heaven/img/tempura/philadelphia_tempura.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/tempura/philadelphia_tempura.jpg",
     "title": "Филадельфия темпура",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, лосось, снежный краб, мука, яйцо, сухари панировочные, сыр сливочный",
     "weight": 215,
@@ -241,7 +241,7 @@
   },
   {
     "id": "15",
-    "imageUrl": "/Sushi-Heaven/img/sushi/unagi.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/sushi/unagi.jpg",
     "title": "Унаги",
     "description": "Рис, мицукан, сахар, комбу, соль, угорь, соус унаги, кунжут белый",
     "weight": 38,
@@ -257,7 +257,7 @@
   },
   {
     "id": "16",
-    "imageUrl": "/Sushi-Heaven/img/sushi/abi.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/sushi/abi.jpg",
     "title": "Эби",
     "description": "Рис, мицукан, сахар, комбу, соль, креветка, сыр сливочный",
     "weight": 35,
@@ -273,7 +273,7 @@
   },
   {
     "id": "17",
-    "imageUrl": "/Sushi-Heaven/img/sushi/sake.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/sushi/sake.jpg",
     "title": "Сяке",
     "description": "Рис, мицукан, сахар, комбу, соль, лосось",
     "weight": 35,
@@ -289,7 +289,7 @@
   },
   {
     "id": "18",
-    "imageUrl": "/Sushi-Heaven/img/sushi/guncan_shrimp.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/sushi/guncan_shrimp.jpg",
     "title": "Креветка гункан",
     "description": "Рис, мицукан, сахар, комбу, соль, нори, креветка, сыр гауда, майонез, паста кимчи",
     "weight": 54,
@@ -305,7 +305,7 @@
   },
   {
     "id": "19",
-    "imageUrl": "/Sushi-Heaven/img/sushi/chukka_gunkan.jpg",
+    "imageUrl": "sushi-heaven.vercel.app/img/sushi/chukka_gunkan.jpg",
     "title": "Чука гункан",
     "description": "Рис, мицукан, сахар, комбу, соль,чука, нори, соус кунжутный",
     "weight": 40,
@@ -322,7 +322,7 @@
 
   {
     "id": "20",
-    "imageUrl": "/Sushi-Heaven/img/sets/hot_secret.png",
+    "imageUrl": "sushi-heaven.vercel.app/img/sets/hot_secret.png",
     "title": "Горячий секрет",
     "description": "Он останется только между вами. Раздели со второй половинкой горячие роллы с разнообразной начинкой. Состав: Цезарь темпура, Цезарь BIG. Филадельфия темпура, Сяке темпура, Эби темпура",
     "weight": 1175,
@@ -338,7 +338,7 @@
   },
   {
     "id": "21",
-    "imageUrl": "/Sushi-Heaven/img/sets/three_caesars.png",
+    "imageUrl": "sushi-heaven.vercel.app/img/sets/three_caesars.png",
     "title": "Три Цезаря",
     "description": "Для любителей нежной курочки. Популярный салат свернули в ролл и приготовили 3 разными способами. Пробуй! Состав: Цезарь, Цезарь темпура, Цезарь BIG",
     "weight": 790,
@@ -354,7 +354,7 @@
   },
   {
     "id": "22",
-    "imageUrl": "/Sushi-Heaven/img/sets/express№1.png",
+    "imageUrl": "sushi-heaven.vercel.app/img/sets/express№1.png",
     "title": "Экспресс №1",
     "description": "Состав: Филадельфия с огурцом, Филадельфия с луком, Цезарь темпура, Эби темпура",
     "weight": 955,
@@ -370,7 +370,7 @@
   },
   {
     "id": "23",
-    "imageUrl": "/Sushi-Heaven/img/sets/ardent_fujoku.png",
+    "imageUrl": "sushi-heaven.vercel.app/img/sets/ardent_fujoku.png",
     "title": "Пылкий Фудзоку",
     "description": "Запечённый сет с лососем, креветкой и курицей так и рвётся на стол.Состав: Запечённый с курицей NEW, Запечённый с креветкой, Запечённая филадельфия с лососем, Веган-микс",
     "weight": 920,
@@ -386,7 +386,7 @@
   },
   {
     "id": "24",
-    "imageUrl": "/Sushi-Heaven/img/sets/cool_suteki.png",
+    "imageUrl": "sushi-heaven.vercel.app/img/sets/cool_suteki.png",
     "title": "Классный Сутэки",
     "description": "Реально кайфовый сет с лососем для романтического вечера со второй половинкой.Состав: Нежный лосось, Лосось с тобико, Сяке, Эби",
     "weight": 485,
@@ -402,7 +402,7 @@
   },
   {
     "id": "25",
-    "imageUrl": "/Sushi-Heaven/img/sets/fast_hayaku.png",
+    "imageUrl": "sushi-heaven.vercel.app/img/sets/fast_hayaku.png",
     "title": "Резвый Хаяку",
     "description": "Не жди повода: Резвый Хаяку готов радовать тебя сочным лососем каждый день.Состав: Лосось с тобико, Перчик лосося, Яркий лосось",
     "weight": 605,
