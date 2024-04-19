@@ -63,7 +63,7 @@ export const Sort: React.FC<ISortProps> = (({ value }) => {
               <b>Сортировка по:</b>
               <span onClick={() => setOpen(!open)}>{value.name}</span>
             </div>
-            {location.pathname !== "sushi-heaven.vercel.app/cart" && (
+            {location.pathname !== "/cart" && (
               <Link to="cart" className="button button--cart">
                 <svg
                   width="16"

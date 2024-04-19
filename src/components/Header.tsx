@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
   return (
     <div className="header">
       <div className="container">
-        <Link to="sushi-heaven.vercel.app/">
+        <Link to="/">
           <div className="header__logo">
             <img width="38" src={logoSvg} alt="Sushi logo" />
             <div>
@@ -39,13 +39,13 @@ export const Header: React.FC = () => {
         </Link>
         {windowWidth <= 767 ? (
           <>
-            {location.pathname !== "sushi-heaven.vercel.app/cart" && <Search />}
+            {location.pathname !== "/cart" && <Search />}
           </>
         ) : (
           <>
-            {location.pathname !== "sushi-heaven.vercel.app/cart" && <Search />}
+            {location.pathname !== "/cart" && <Search />}
             <div className="header__cart">
-              {location.pathname !== "sushi-heaven.vercel.app/cart" && (
+              {location.pathname !== "/cart" && (
                 <Link to="cart" className="button button--cart">
                   <span>{totalPrice} ₽</span>
                   <div className="button__delimiter"></div>

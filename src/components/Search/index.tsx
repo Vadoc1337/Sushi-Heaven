@@ -34,7 +34,7 @@ export const Search = () => {
   React.useEffect(() => {
     const handleVisibility = () => {
       const currentPath = window.location.pathname;
-      setIsVisible(!currentPath.includes("sushi-heaven.vercel.app/cart"));
+      setIsVisible(!currentPath.includes("/cart"));
     };
 
     handleVisibility();
