@@ -15,7 +15,7 @@ export const CartEmpty = () => {
         <p>
           Добавьте что-нибудь из меню
         </p>
-        <Link to="sushi-heaven.vercel.app/" className="button button--black">
+        <Link to="/" className="button button--black">
           <span>Вернуться назад</span>{" "}
         </Link>
       </div>

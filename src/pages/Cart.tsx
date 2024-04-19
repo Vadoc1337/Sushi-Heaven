@@ -134,7 +134,7 @@ const Cart = () => {
           </div>
           <div className="cart__bottom-buttons">
             <Link
-              to="sushi-heaven.vercel.app/"
+              to="/"
               className="button button--outline button--add go-back-btn"
             >
               {windowWidth <= 585 ? (
