@@ -16,10 +16,10 @@ const NotFound = React.lazy(
 function App() {
   return (
     <Routes>
-      <Route path="sushi-heaven.vercel.app/" element={<MainLayout />}>
-        <Route path="sushi-heaven.vercel.app/" element={<Home />} />
+      <Route path="/" element={<MainLayout />}>
+        <Route path="/" element={<Home />} />
         <Route
-          path="sushi-heaven.vercel.app/cart"
+          path="*/cart"
           element={
             <React.Suspense
               fallback={<div className="container">Загрузка...</div>}
