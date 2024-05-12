@@ -8,11 +8,15 @@ import {
   Status,
 } from "../../data/declarations";
 
+import ruLanguageIcon from "../../assets/img/ru-language-icon.svg";
+import enLanguageIcon from "../../assets/img/en-language-icon.svg";
+
+
 export const fetchSushi = createAsyncThunk<ISushi[], IFetchSushiArgs>(
   "sushi/fetchSushiStatus",
   async (params, { rejectWithValue }) => {
     try {
-      const { currentPage, category, sort, orderType, search } = params;
+      const { url,currentPage, category, sort, orderType, search } = params;
       let limit = 4;
       let page: number | string = currentPage;
 
@@ -24,7 +28,7 @@ export const fetchSushi = createAsyncThunk<ISushi[], IFetchSushiArgs>(
       }
 
       const { data } = await axios.get<ISushi[]>(
-        `https://654e75f6cbc325355742e3fc.mockapi.io/items?page=${page}&limit=${limit}&${category}&sortBy=${sort.sortProperty}&order=${orderType.name}${search}`,
+        `${url}?page=${page}&limit=${limit}&${category}&sortBy=${sort.sortProperty}&order=${orderType.name}${search}`,
       );
       return data;
     } catch (error) {
@@ -36,7 +40,10 @@ export const fetchSushi = createAsyncThunk<ISushi[], IFetchSushiArgs>(
 const initialState: ISushiSliceState = {
   items: [],
   status: Status.LOADING, // "loading" | "success" | "error"
+  isClicked: true,
+  languageIcon: ruLanguageIcon,
 };
+
 
 const sushiSlice = createSlice({
   name: "sushi",
@@ -44,6 +51,10 @@ const sushiSlice = createSlice({
   reducers: {
     setItems(state, action) {
       state.items = action.payload;
+    },
+    toggleClick(state) {
+      state.isClicked = !state.isClicked;
+      state.languageIcon = state.isClicked ? ruLanguageIcon : enLanguageIcon;
     },
   },
   extraReducers: (builder) => {
@@ -66,6 +77,6 @@ const sushiSlice = createSlice({
 });
 
 export const selectSushiData = (state: RootState) => state.sushi;
-// export const { setItems } = sushiSlice.actions;
+export const { setItems,toggleClick } = sushiSlice.actions;
 
 export default sushiSlice.reducer;

@@ -1,23 +1,35 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useSelector } from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 import { selectCart } from "../redux/slices/cartSlice";
+import {toggleClick}  from "../redux/slices/sushiSlices";
+
 import { Search } from "./Search";
 import useWindowWidth from "../hooks/useWindowWidth";
 import logoSvg from "../assets/img/sushi-logo.svg";
-
+import {RootState} from "../redux/store";
+import useLanguageChecker from "../hooks/useLanguageChecker";
+import {selectExchangeRate} from "../redux/slices/exchangeRateSlice";
+import { calcTotalPrice } from "../utils/calcTotalPrice";
 export const Header: React.FC = () => {
-  const { items, totalPrice } = useSelector(selectCart);
+  let { items } = useSelector(selectCart);
+  const {languageIcon} = useSelector((state: RootState) => state.sushi);
   const location = useLocation();
   const isMounted = React.useRef(false);
   const windowWidth = useWindowWidth();
+  const checkLanguage = useLanguageChecker();
+  const dispatch = useDispatch()<any>;
+
 
   const totalCount = items.reduce(
-    (sum: number, item: any) => sum + item.count,
-    0,
+      (sum: number, item: any) => sum + item.count,
+      0,
   );
 
+  const changeLanguage = () => {
+    dispatch(toggleClick());
+  };
   React.useEffect(() => {
     if (isMounted.current) {
       const json = JSON.stringify(items);
@@ -25,6 +37,12 @@ export const Header: React.FC = () => {
     }
     isMounted.current = true;
   }, [items]); // it's a sample of how to make sure that this function is not rendered on the first load
+
+  const exchangeRate = useSelector(selectExchangeRate);
+
+  const totalPrice = checkLanguage
+      ? calcTotalPrice(items, true, exchangeRate.value)
+      : calcTotalPrice(items);
 
   return (
     <div className="header">
@@ -38,16 +56,20 @@ export const Header: React.FC = () => {
           </div>
         </Link>
         {windowWidth <= 767 ? (
-          <>
-            {location.pathname !== "/cart" && <Search />}
-          </>
+          <>{location.pathname !== "/cart" && <Search />}</>
         ) : (
           <>
             {location.pathname !== "/cart" && <Search />}
             <div className="header__cart">
+              <img
+                src={languageIcon}
+                className={"language__icon"}
+                alt="Language icon"
+                onClick={changeLanguage}
+              />
               {location.pathname !== "/cart" && (
                 <Link to="cart" className="button button--cart">
-                  <span>{totalPrice} ₽</span>
+                  <span>{totalPrice} {checkLanguage ? "$" : "₽"}</span>
                   <div className="button__delimiter"></div>
                   <svg
                     width="18"

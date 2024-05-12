@@ -14,6 +14,8 @@ interface ISushi {
 interface ISushiSliceState {
   items: ISushi[];
   status: Status;
+  isClicked: boolean;
+  languageIcon: string;
 }
 
 interface InutritionFacts {
@@ -35,6 +37,7 @@ interface ISushiBlockProps {
 }
 
 interface IFetchSushiArgs {
+  url: string;
   currentPage: number;
   category: string;
   sort: { sortProperty?: string };
@@ -82,6 +85,18 @@ interface IList {
   sortProperty?: "rating" | "price" | "title";
 }
 
+// * ExchangeRateSlice declarations
+
+interface IExchangeRateSliceState {
+  value: number;
+  status: Status;
+  error: undefined | string;
+}
+
+interface ExchangeRate {
+  value: number;
+}
+
 // * Other declarations
 
 interface ICategoriesProps {
@@ -125,4 +140,6 @@ export type {
   IFetchSushiArgs,
   AnimationLayoutProps,
   IMarginScaleData,
+  IExchangeRateSliceState,
+  ExchangeRate,
 };

@@ -1,9 +1,16 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { addItem, minusItem, removeItem } from "../redux/slices/cartSlice";
 import { ICartItem } from "../data/declarations";
 import useWindowWidth from "../hooks/useWindowWidth";
+import useLanguageChecker from "../hooks/useLanguageChecker";
+import { RootState } from "../redux/store";
+
+import enSushi from "../assets/sushi_en.json";
+import ruSushi from "../assets/sushi_ru.json";
+import { roundToFiveCents } from "../utils/roundToFiveCents";
+import { selectExchangeRate } from "../redux/slices/exchangeRateSlice";
 
 export const CartItem = ({
   id,
@@ -14,6 +21,21 @@ export const CartItem = ({
   weight,
 }: ICartItem) => {
   const dispatch = useDispatch();
+  const { languageIcon } = useSelector((state: RootState) => state.sushi);
+  const [fetchedTitle, setFetchedTitle] = React.useState(title); // State to store the fetched title
+  const checkLanguage = useLanguageChecker();
+  const exchangeRate = useSelector(selectExchangeRate);
+
+  React.useEffect(() => {
+    const fetchData = () => {
+      const data = checkLanguage ? enSushi : ruSushi;
+      const item = data.find((item) => item.id === id);
+      if (item) {
+        setFetchedTitle(item.title);
+      }
+    };
+    fetchData();
+  }, [languageIcon]);
 
   const onClickPlus = () => {
     dispatch(
@@ -37,8 +59,11 @@ export const CartItem = ({
         <img className="sushi-block__image" src={imageUrl} alt="Sushi" />
       </div>
       <div className="cart__item-info">
-        <h3>{title}</h3>
-        <p className="sushi-block__weight">{weight} г</p>
+        <h3>{fetchedTitle}</h3>
+        <p className="sushi-block__weight">
+          {weight}
+          {checkLanguage ? " g " : " г "}
+        </p>
       </div>
       {useWindowWidth() <= 585 ? (
         <>
@@ -66,9 +91,19 @@ export const CartItem = ({
             </button>
           </div>
           <div className="cart__item__mobile">
-            <div className="cart__item__mobile cart__item-price">
-              <b>{price * count}₽</b>
-            </div>
+            {checkLanguage ? (
+              <div className="cart__item__mobile cart__item-price">
+                <b>
+                  {+(roundToFiveCents(price / exchangeRate.value) *
+                    count).toFixed(2)}
+                  $
+                </b>
+              </div>
+            ) : (
+              <div className="cart__item__mobile cart__item-price">
+                <b>{price * count}₽</b>
+              </div>
+            )}
             <div className="cart__item__mobile cart__item-count">
               <button
                 onClick={onClickMinus}
@@ -163,9 +198,20 @@ export const CartItem = ({
               </svg>
             </button>
           </div>
-          <div className="cart__item-price">
-            <b>{price * count}₽</b>
-          </div>
+          {checkLanguage ? (
+            <div className="cart__item-price">
+              <b>
+                {+(roundToFiveCents(price / exchangeRate.value) *
+                  count).toFixed(2)}
+                $
+              </b>
+            </div>
+          ) : (
+            <div className="cart__item-price">
+              <b>{price * count}₽</b>
+            </div>
+          )}
+
           <div className="cart__item-remove">
             <button
               onClick={onClickRemove}

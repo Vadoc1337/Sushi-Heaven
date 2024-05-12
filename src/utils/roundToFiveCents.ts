@@ -1,0 +1,1 @@
+export const roundToFiveCents = (num: number) => Math.ceil(num * 20) / 20;

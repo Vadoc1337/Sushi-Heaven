@@ -1,15 +1,21 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import debounce from "lodash.debounce";
 
 import { setSearchValue } from "../../redux/slices/filterSlice";
+import { toggleClick } from "../../redux/slices/sushiSlices";
+import { RootState } from "../../redux/store";
+
 import styles from "./Search.module.scss";
+import useWindowWidth from "../../hooks/useWindowWidth";
+import useLanguageChecker from "../../hooks/useLanguageChecker";
 
 export const Search = () => {
   const dispatch = useDispatch();
+  const { languageIcon } = useSelector((state: RootState) => state.sushi);
   const [value, setValue] = React.useState("");
-  const [isVisible, setIsVisible] = React.useState(true);
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const windowWidth = useWindowWidth();
 
   const updateSearchValue = React.useCallback(
     debounce((str: string) => dispatch(setSearchValue(str)), 500),
@@ -22,6 +28,10 @@ export const Search = () => {
     inputRef.current?.focus();
   };
 
+  const changeLanguage = () => {
+    dispatch(toggleClick());
+  };
+
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     let inputValue = event.target.value;
     if (inputValue.includes("")) {
@@ -31,18 +41,8 @@ export const Search = () => {
     setValue(inputValue);
   };
 
-  React.useEffect(() => {
-    const handleVisibility = () => {
-      const currentPath = window.location.pathname;
-      setIsVisible(!currentPath.includes("/cart"));
-    };
-
-    handleVisibility();
-  }, [window.location.pathname]);
-
-
   return (
-    <div className={styles.root} style={isVisible ? {} : { display: "none" }}>
+    <div className={styles.root}>
       <svg
         className={styles.icon}
         fill="#000000"
@@ -67,7 +67,7 @@ export const Search = () => {
         value={value}
         onChange={onChangeInput}
         className={styles.input}
-        placeholder="Поиск"
+        placeholder={useLanguageChecker() ? "Search" : "Поиск"}
       />
       {value && (
         <svg
@@ -81,6 +81,14 @@ export const Search = () => {
         >
           <path d="M443.6,387.1L312.4,255.4l131.5-130c5.4-5.4,5.4-14.2,0-19.6l-37.4-37.6c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4  L256,197.8L124.9,68.3c-2.6-2.6-6.1-4-9.8-4c-3.7,0-7.2,1.5-9.8,4L68,105.9c-5.4,5.4-5.4,14.2,0,19.6l131.5,130L68.4,387.1  c-2.6,2.6-4.1,6.1-4.1,9.8c0,3.7,1.4,7.2,4.1,9.8l37.4,37.6c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1L256,313.1l130.7,131.1  c2.7,2.7,6.2,4.1,9.8,4.1c3.5,0,7.1-1.3,9.8-4.1l37.4-37.6c2.6-2.6,4.1-6.1,4.1-9.8C447.7,393.2,446.2,389.7,443.6,387.1z" />
         </svg>
+      )}
+      {windowWidth <= 767 && (
+        <img
+          src={languageIcon}
+          className={styles.language__icon}
+          alt="Language icon"
+          onClick={changeLanguage}
+        />
       )}
     </div>
   );

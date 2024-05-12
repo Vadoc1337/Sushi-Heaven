@@ -7,19 +7,38 @@ import { setSort, setOrderType } from "../redux/slices/filterSlice";
 import { selectCart } from "../redux/slices/cartSlice";
 import { IList, ISortProps } from "../data/declarations";
 import useWindowWidth from "../hooks/useWindowWidth";
+import useLanguageChecker from "../hooks/useLanguageChecker";
 
-export const list: Array<IList> = [
+const enList: Array<IList> = [
+  { name: "popularity", sortProperty: "rating" },
+  { name: "price", sortProperty: "price" },
+  { name: "alphabet", sortProperty: "title" },
+];
+
+const ruList: Array<IList> = [
   { name: "популярности", sortProperty: "rating" },
   { name: "цене", sortProperty: "price" },
   { name: "алфавиту", sortProperty: "title" },
 ];
 
-export const Sort: React.FC<ISortProps> = (({ value }) => {
+const categoryNameMap = {
+  rating: { en: "popularity", ru: "популярности" },
+  price: { en: "price", ru: "цене" },
+  title: { en: "alphabet", ru: "алфавиту" },
+};
+
+export const Sort: React.FC<ISortProps> = ({ value }) => {
   const dispatch = useDispatch();
   const sortRef = React.useRef<HTMLDivElement>(null);
   const [open, setOpen] = React.useState(false);
   const { items } = useSelector(selectCart);
   const location = useLocation();
+
+  const checkLanguage = useLanguageChecker();
+
+  const sortProperty = value.sortProperty as keyof typeof categoryNameMap;
+  const categoryName =
+    categoryNameMap[sortProperty][checkLanguage ? "en" : "ru"];
 
   const totalCount = items.reduce(
     (sum: number, item: any) => sum + item.count,
@@ -50,18 +69,16 @@ export const Sort: React.FC<ISortProps> = (({ value }) => {
                 onClick={() => onChangeOrderType("asc")}
                 aria-label="Sort Ascending"
               >
-                {/*{" "}*/}
-                ↑
+                {/*{" "}*/}↑
               </button>
               <button
                 onClick={() => onChangeOrderType("desc")}
                 aria-label="Sort Descending"
               >
-                {/*{" "}*/}
-                ↓
+                {/*{" "}*/}↓
               </button>
-              <b>Сортировка по:</b>
-              <span onClick={() => setOpen(!open)}>{value.name}</span>
+              <b>{checkLanguage ? "Sort by:" : "Сортировка по:"}</b>
+              <span onClick={() => setOpen(!open)}>{categoryName}</span>
             </div>
             {location.pathname !== "/cart" && (
               <Link to="cart" className="button button--cart">
@@ -114,28 +131,44 @@ export const Sort: React.FC<ISortProps> = (({ value }) => {
                 ↓
               </button>
             </div>
-            <b>Сортировка по:</b>
-            <span onClick={() => setOpen(!open)}>{value.name}</span>
+            <b>
+              {checkLanguage
+                ?  "Sort by:"
+                : "Сортировка по:"}
+            </b>
+            <span onClick={() => setOpen(!open)}>{categoryName}</span>
           </>
         )}
       </div>
       {open && (
         <div className="sort__popup">
           <ul>
-            {list.map((obj, i) => (
-              <li
-                key={i}
-                onClick={() => onClickListItem(obj)}
-                className={
-                  value.sortProperty === obj.sortProperty ? "active" : " "
-                }
-              >
-                {obj.name}
-              </li>
-            ))}
+            {checkLanguage
+              ? enList.map((obj, i) => (
+                  <li
+                    key={i}
+                    onClick={() => onClickListItem(obj)}
+                    className={
+                      value.sortProperty === obj.sortProperty ? "active" : " "
+                    }
+                  >
+                    {obj.name}
+                  </li>
+                ))
+              : ruList.map((obj, i) => (
+                  <li
+                    key={i}
+                    onClick={() => onClickListItem(obj)}
+                    className={
+                      value.sortProperty === obj.sortProperty ? "active" : " "
+                    }
+                  >
+                    {obj.name}
+                  </li>
+                ))}
           </ul>
         </div>
       )}
     </div>
   );
-});
+};

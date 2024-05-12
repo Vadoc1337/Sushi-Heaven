@@ -7,9 +7,14 @@ import {
   minusItem,
   selectCartItemById,
 } from "../../redux/slices/cartSlice";
+import {
+  selectExchangeRate,
+} from "../../redux/slices/exchangeRateSlice";
 
 import { ICartItem, ISushiBlockProps } from "../../data/declarations";
 import AnimationLayout from "../../layots/AnimationLayout";
+import useLanguageChecker from "../../hooks/useLanguageChecker";
+import {roundToFiveCents} from "../../utils/roundToFiveCents";
 
 export const SushiBlock: React.FC<ISushiBlockProps> = ({
   id,
@@ -20,8 +25,11 @@ export const SushiBlock: React.FC<ISushiBlockProps> = ({
   weight,
   nutritionFacts,
 }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()<any>; // add later correct type
   const cartItem = useSelector(selectCartItemById(id));
+  const isEnglishLang = useLanguageChecker();
+  const exchangeRate = useSelector(selectExchangeRate);
+
   const { calories, protein, fat, carbohydrate } = nutritionFacts;
 
   const addedCount = cartItem ? cartItem.count : 0;
@@ -56,9 +64,12 @@ export const SushiBlock: React.FC<ISushiBlockProps> = ({
   return (
     <AnimationLayout>
       <div className="sushi-block">
-        <img className="sushi-block__image" src={imageUrl} alt="Роллы" />
+        <img className="sushi-block__image" src={imageUrl} alt="Rolls" />
         <h4 className="sushi-block__title">
-          {title} <span className="sushi-block__weight">{weight} г</span>
+          {title}{" "}
+          <span className="sushi-block__weight">
+            {weight} {isEnglishLang ? "g" : "г"}
+          </span>
           {POSITION_TYPES.map((position, i) => (
             <Popup
               key={`tp-${i}`}
@@ -72,36 +83,40 @@ export const SushiBlock: React.FC<ISushiBlockProps> = ({
                 <tbody>
                   <tr>
                     <th colSpan={3}>
-                      <b>Пищевая ценность на 100 г</b>
+                      <b>
+                        {isEnglishLang
+                          ? "Nutritional value per 100 g"
+                          : "Пищевая ценность на 100 г"}
+                      </b>
                     </th>
                   </tr>
                   <tr>
-                    <td>Калорийность</td>
+                    <td>{isEnglishLang ? "Calories" : "Калорийность"}</td>
                     <td>
                       <b>{calories}</b>
                     </td>
-                    <td>Ккал</td>
+                    <td>{isEnglishLang ? "Kcal" : "Ккал"}</td>
                   </tr>
                   <tr>
-                    <td>Белки</td>
+                    <td>{isEnglishLang ? "Protein" : "Белки"}</td>
                     <td>
                       <b>{protein}</b>
                     </td>
-                    <td>грамм</td>
+                    <td>{isEnglishLang ? "grammes" : "грамм"}</td>
                   </tr>
                   <tr>
-                    <td>Жиры</td>
+                    <td>{isEnglishLang ? "Fat" : "Жиры"}</td>
                     <td>
                       <b>{fat}</b>
                     </td>
-                    <td>грамм</td>
+                    <td>{isEnglishLang ? "grammes" : "грамм"}</td>
                   </tr>
                   <tr>
-                    <td>Углеводы</td>
+                    <td>{isEnglishLang ? "Carbohydrate" : "Углеводы"}</td>
                     <td>
                       <b>{carbohydrate}</b>
                     </td>
-                    <td>грамм</td>
+                    <td>{isEnglishLang ? "grammes" : "грамм"}</td>
                   </tr>
                 </tbody>
               </table>
@@ -111,7 +126,14 @@ export const SushiBlock: React.FC<ISushiBlockProps> = ({
         <div className="sushi-block__selector">
           <p>{description}</p>
           <div className="sushi-block__bottom">
-            <div className="sushi-block__price">от {price} ₽</div>
+            {isEnglishLang ? (
+              <div className="sushi-block__price">
+                {+(roundToFiveCents(price / exchangeRate.value).toFixed(2))}
+                $
+              </div>
+            ) : (
+              <div className="sushi-block__price">{price} ₽</div>
+            )}
             {addedCount > 0 ? (
               <div className="cart__item__mobile cart__item-count">
                 <button
@@ -163,7 +185,7 @@ export const SushiBlock: React.FC<ISushiBlockProps> = ({
                 onClick={onClickAdd}
                 className="button button--outline button--add"
               >
-                <span>Добавить</span>
+                <span>{isEnglishLang ? "Add" : "Добавить"}</span>
               </button>
             )}
           </div>

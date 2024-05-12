@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 
-import { useAppDispatch } from "../redux/store";
+import { RootState, useAppDispatch } from "../redux/store";
 import {
   setCategoryId,
   setCurrentPage,
@@ -13,6 +13,7 @@ import { fetchSushi, selectSushiData } from "../redux/slices/sushiSlices";
 
 import { Status } from "../data/declarations";
 import useWindowWidth from "../hooks/useWindowWidth";
+import useLanguageChecker from "../hooks/useLanguageChecker";
 
 import {
   Categories,
@@ -21,17 +22,20 @@ import {
   Skeleton,
   Pagination,
 } from "../components";
+import {fetchExchangeRate} from "../redux/slices/exchangeRateSlice";
 
 const Home = () => {
+  const { languageIcon } = useSelector((state: RootState) => state.sushi);
+  const checkLanguage = useLanguageChecker();
   const dispatch = useAppDispatch();
   const topRef = React.useRef<HTMLDivElement>(null);
   const windowWidth = useWindowWidth();
   const scrollFunc = () => {
     const headerElement = document.querySelector(`.header`);
-      headerElement!.scrollIntoView({
-          behavior: `smooth`,
-          block: `start`,
-        });
+    headerElement!.scrollIntoView({
+      behavior: `smooth`,
+      block: `start`,
+    });
   };
   const { categoryId, sort, currentPage, orderType, searchValue, isSearch } =
     useSelector(selectFilter);
@@ -66,8 +70,14 @@ const Home = () => {
     const category =
       categoryId > 0 && !searchValue ? `category=${getCategoryId}` : "";
     const search = searchValue ? `&search=${searchValue}` : "";
+
+    const url = checkLanguage
+      ? "https://654e75f6cbc325355742e3fc.mockapi.io/sushi_en"
+      : "https://654e75f6cbc325355742e3fc.mockapi.io/sushi_ru"
+    ;
     dispatch(
       fetchSushi({
+        url,
         currentPage,
         category,
         sort: {
@@ -82,6 +92,11 @@ const Home = () => {
     }
   };
 
+  React.useEffect(() => {
+    if (checkLanguage){
+    dispatch(fetchExchangeRate()).unwrap();}
+  }, [dispatch,checkLanguage]);
+
   //Если был первий рендер то запрашиваем роллы/суши
   React.useEffect(() => {
     if (windowWidth <= 1456) {
@@ -92,6 +107,7 @@ const Home = () => {
     }
     dispatch(setIsSearch(false));
   }, [
+    languageIcon,
     getCategoryId,
     sort.sortProperty,
     searchValue,
@@ -118,12 +134,21 @@ const Home = () => {
         />
       </div>
       {status === "error" ? (
-        <div className="content__error-info">
-          <h2>
-            Ошибка <span>😐</span>
-          </h2>
-          <p>Попробуйте изменить запрос</p>
-        </div>
+        checkLanguage ? (
+          <div className="content__error-info">
+            <h2>
+              Error <span>😐</span>
+            </h2>
+            <p>Try to change the query</p>
+          </div>
+        ) : (
+          <div className="content__error-info">
+            <h2>
+              Ошибка <span>😐</span>
+            </h2>
+            <p>Попробуйте изменить запрос</p>
+          </div>
+        )
       ) : (
         <div
           className={`content__items ${searchValue ? `` : `without-search`}`}

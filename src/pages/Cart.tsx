@@ -6,11 +6,21 @@ import { CartItem, CartEmpty } from "../components";
 import { clearItems, selectCart } from "../redux/slices/cartSlice";
 import useWindowWidth from "../hooks/useWindowWidth";
 import AnimationLayout from "../layots/AnimationLayout";
+import useLanguageChecker from "../hooks/useLanguageChecker";
+import {selectExchangeRate} from "../redux/slices/exchangeRateSlice";
+import {calcTotalPrice} from "../utils/calcTotalPrice";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const { totalPrice, items } = useSelector(selectCart);
+  const {items } = useSelector(selectCart);
   const windowWidth = useWindowWidth();
+  const checkLanguage = useLanguageChecker();
+  const exchangeRate = useSelector(selectExchangeRate);
+
+  const totalPrice = checkLanguage
+      ? calcTotalPrice(items, true, exchangeRate.value)
+      : calcTotalPrice(items);
+
   const scrollFunc = () => {
     const headerElement = document.querySelector(`.content`);
     headerElement!.scrollIntoView({
@@ -29,12 +39,11 @@ const Cart = () => {
   };
 
   if (!totalPrice) {
-    scrollFunc()
+    scrollFunc();
     return <CartEmpty />;
   }
 
   return (
-
     <div className="container container--cart">
       <div className="cart">
         <div className="cart__top">
@@ -68,7 +77,7 @@ const Cart = () => {
                 strokeLinejoin="round"
               ></path>
             </svg>
-            Корзина
+            {checkLanguage ? "Cart" : "Корзина"}
           </h2>
           <div onClick={onClickClear} className="cart__clear">
             <svg
@@ -111,27 +120,38 @@ const Cart = () => {
               <></>
             ) : (
               <>
-                <span>Очистить корзину</span>
+                <span>{checkLanguage ? "Clear cart" : "Очистить корзину"}</span>
               </>
             )}
           </div>
         </div>
         <AnimationLayout>
-        <div className="content__items">
-          {items.map((item: any) => (
-            <CartItem key={item.id} {...item} />
-          ))}
-        </div>
+          <div className="content__items">
+            {items.map((item: any) => (
+              <CartItem key={item.id} {...item} />
+            ))}
+          </div>
         </AnimationLayout>
         <div className="cart__bottom">
-          <div className="cart__bottom-details">
-            <span>
-              Всего позиций: <b>{totalCount} шт.</b>
-            </span>
-            <span>
-              Сумма заказа: <b>{totalPrice} ₽</b>
-            </span>
-          </div>
+          {checkLanguage ? (
+            <div className="cart__bottom-details">
+              <span>
+                Total items: <b>{totalCount} pcs.</b>
+              </span>
+              <span>
+                Order amount: <b>{totalPrice} $</b>
+              </span>
+            </div>
+          ) : (
+            <div className="cart__bottom-details">
+              <span>
+                Всего позиций: <b>{totalCount} шт.</b>
+              </span>
+              <span>
+                Сумма заказа: <b>{totalPrice} ₽</b>
+              </span>
+            </div>
+          )}
           <div className="cart__bottom-buttons">
             <Link
               to="/"
@@ -158,10 +178,10 @@ const Cart = () => {
                   </svg>
                 </>
               )}
-              <span>Вернуться назад</span>
+              <span>{checkLanguage? "Go back" : "Вернуться назад"}</span>
             </Link>
             <div className="button pay-btn">
-              <span>Оплатить</span>
+              <span>{checkLanguage ? "Place an order" : "Оформить заказ"}</span>
             </div>
           </div>
         </div>

@@ -41,7 +41,8 @@ _________
 Загружаем проект. Затем, в каталоге проекта в терминале используйте следующую команду для запуска приложения:
 
 ```bash
-  npm start
+  npm install / yarn add    // загружаем node_modules
+  npm start / yarn start    // стартуем приложение
 ```
 
 Приложение будет запущено в режиме разработчика.\
@@ -49,7 +50,7 @@ _________
 
 ## ✅ Что можно добавить
 
-- [ ] Сделать кнопку переключения на английский язык, при нажатии на которую менялись бы рубли на доллары и текст на английский и обратно (сделать цену на доллары актуальной на дату курса ЦБ РФ)
+- [x] Сделать кнопку переключения на английский язык, при нажатии на которую менялись бы рубли на доллары и текст на английский и обратно (сделать цену в долларах актуальной на дату курса пары рубль-доллар)
 - [ ] Реализовать функционал на бэкенде и фронте по оформлению товаров с дальнейшей отправкой этих данных путем email-а 📨 в сам магазин
 - [ ] Типизировать и упорядочить некоторые участки кода
 
@@ -96,7 +97,8 @@ The site is a sushi restaurant where you can choose and buy various products. Th
 Uploading the project. Then, in the project directory in the terminal, use the following command to launch the application:
 
 ```bash
-npm start
+npm install / yarn add     // load node_modules
+npm start / yarn start     // run App
 ```
 
 The application will be launched in developer mode.\
@@ -104,7 +106,7 @@ Enter [http://localhost:3000 ](http://localhost:3000 ) to your browser.
 
 ## ✅ What can be added
 
-- [ ] Make a button to switch to English, when clicked, which would change rubles to dollars and text to English and back (make the price of dollars relevant on the date of the exchange rate of the Central Bank of the Russian Federation)
+- [x] Make a button to switch to English, when clicked, which would change rubles to dollars and text to English and back (make the dollar price relevant on the date of the ruble-dollar exchange rate)
 - [ ] Implement functionality on the backend and frontend for the registration of goods with further sending of this data by email 📨 to the restaurant itself
 - [ ] To type and organize some sections of the code
 

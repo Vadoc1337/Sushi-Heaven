@@ -22,7 +22,7 @@ function App() {
           path="cart"
           element={
             <React.Suspense
-              fallback={<div className="container">Загрузка...</div>}
+              fallback={<div className="container">Loading...</div>}
             >
               <Cart />
             </React.Suspense>
@@ -32,7 +32,7 @@ function App() {
           path="*"
           element={
             <React.Suspense
-              fallback={<div className="container">Загрузка...</div>}
+              fallback={<div className="container">Loading...</div>}
             >
               <NotFound />
             </React.Suspense>
@@ -44,7 +44,7 @@ function App() {
           path="*"
           element={
             <React.Suspense
-              fallback={<div className="container">Загрузка...</div>}
+              fallback={<div className="container">Loading...</div>}
             >
               <NotFound />
             </React.Suspense>
