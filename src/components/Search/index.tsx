@@ -10,6 +10,7 @@ import styles from "./Search.module.scss";
 import useWindowWidth from "../../hooks/useWindowWidth";
 import useLanguageChecker from "../../hooks/useLanguageChecker";
 
+
 export const Search = () => {
   const dispatch = useDispatch();
   const { languageIcon } = useSelector((state: RootState) => state.sushi);

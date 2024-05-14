@@ -4,6 +4,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import { selectCart } from "../redux/slices/cartSlice";
 import {toggleClick}  from "../redux/slices/sushiSlices";
+import {setSearchValue} from "../redux/slices/filterSlice";
 
 import { Search } from "./Search";
 import useWindowWidth from "../hooks/useWindowWidth";
@@ -12,6 +13,7 @@ import {RootState} from "../redux/store";
 import useLanguageChecker from "../hooks/useLanguageChecker";
 import {selectExchangeRate} from "../redux/slices/exchangeRateSlice";
 import { calcTotalPrice } from "../utils/calcTotalPrice";
+
 export const Header: React.FC = () => {
   let { items } = useSelector(selectCart);
   const {languageIcon} = useSelector((state: RootState) => state.sushi);
@@ -44,6 +46,10 @@ export const Header: React.FC = () => {
       ? calcTotalPrice(items, true, exchangeRate.value)
       : calcTotalPrice(items);
 
+  React.useEffect(() => {
+    dispatch(setSearchValue(""));
+  }, [location.pathname]);
+
   return (
     <div className="header">
       <div className="container">
@@ -61,15 +67,19 @@ export const Header: React.FC = () => {
           <>
             {location.pathname !== "/cart" && <Search />}
             <div className="header__cart">
-              <img
-                src={languageIcon}
-                className={"language__icon"}
-                alt="Language icon"
-                onClick={changeLanguage}
-              />
+              {location.pathname !== "/cart" && (
+                <img
+                  src={languageIcon}
+                  className={"language__icon"}
+                  alt="Language icon"
+                  onClick={changeLanguage}
+                />
+              )}
               {location.pathname !== "/cart" && (
                 <Link to="cart" className="button button--cart">
-                  <span>{totalPrice} {checkLanguage ? "$" : "₽"}</span>
+                  <span>
+                    {totalPrice} {checkLanguage ? "$" : "₽"}
+                  </span>
                   <div className="button__delimiter"></div>
                   <svg
                     width="18"

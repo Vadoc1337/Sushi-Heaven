@@ -97,6 +97,7 @@ const Home = () => {
     dispatch(fetchExchangeRate()).unwrap();}
   }, [dispatch,checkLanguage]);
 
+
   //Если был первий рендер то запрашиваем роллы/суши
   React.useEffect(() => {
     if (windowWidth <= 1456) {
@@ -115,6 +116,7 @@ const Home = () => {
     orderType.name,
   ]);
 
+// If we restart page we should get the category we've selected
   React.useEffect(() => {
     if (isSearch) {
       dispatch(setCategoryId(0));
@@ -122,6 +124,7 @@ const Home = () => {
       dispatch(setCategoryId(getCategoryId));
     }
   }, [isSearch, categoryId, dispatch]);
+
 
   return (
     <div className="container" ref={topRef}>
